@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeadNavbar from "../components/navbar/HeadNavbar";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import NavbarJS from "../components/navbar/NavbarJS";
-import Header from "../components/header/Header.jsx";
-// import video from "../images/video.gif";
 import "../App.css";
+import Footer from "../components/footer/Footer.jsx";
+import HeaderJS from "../components/header/Header.jsx";
 export default function SCTI() {
+  const location = useLocation();
+  const [loc, setLoc] = useState("");
+
+  useEffect(() => {
+    setLoc(location.pathname);
+  }, [location]);
+
   return (
     <div>
-      <div className="bg_img">
+      <div className={`${loc === "/" ? "bg_img" : "bg-[#12274B]"}`}>
         <div className="">
           <HeadNavbar />
           <NavbarJS />
-          <Header />
+          {loc === "/" ? <HeaderJS /> : ""}
         </div>
       </div>
       <Outlet />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

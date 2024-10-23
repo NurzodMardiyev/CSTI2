@@ -43,21 +43,11 @@ export default function NavbarJS() {
   const items1 = [
     {
       key: "1",
-      label:
-        location.pathname === "/" ? (
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            className="text-[14px] font-[500]  menu_item"
-          >
-            Markaz haqida
-          </Link>
-        ) : (
-          <RouterLink to="/" className="text-[14px] font-[500]  menu_item">
-            Markaz haqida
-          </RouterLink>
-        ),
+      label: (
+        <RouterLink to="/about" className="text-[14px] font-[500]  menu_item">
+          Markaz haqida
+        </RouterLink>
+      ),
     },
     {
       key: "2",

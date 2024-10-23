@@ -129,12 +129,15 @@ export default function Partners() {
   return (
     <div className="bg-gradient-to-b from-[#F2FEFF] to-[#fff] py-10">
       <div className="title flex justify-center mb-4">
-        <h1 className="lg:text-[42px] text-[30px] font-[600] text-[#12284C]">
+        <h2 className="lg:text-[42px] text-[30px] font-[600] text-[#12284C]">
           Global technology experts
-        </h1>
+        </h2>
       </div>
-      <div className="container md:max-w-[1400px] md:mx-auto grid  md:py-3 py-1.5 max-w-[90%] mx-auto items-center grid-cols-12 gap-3 justify-center ">
-        <div className="card bg-white max-w-[380px]  rounded-xl lg:flex flex-col items-center px-10 py-14 hidden col-span-4 ">
+      <div className="container md:max-w-[1400px] md:mx-auto grid  md:py-3 py-1.5 max-w-[90%] mx-auto items-center grid-cols-12 gap-3 ">
+        <div
+          style={{ marginLeft: "100px" }}
+          className="card   bg-white max-w-[380px]  rounded-xl lg:flex flex-col items-center px-10 py-14 hidden col-span-4 "
+        >
           <div>
             <img src={partner1} alt="partner1" />
           </div>
@@ -144,10 +147,10 @@ export default function Partners() {
             extensive clients roster.
           </p>
         </div>
-        <div className="md:max-w-[840px] max-w-[420px]   lg:col-span-8 col-span-12 mx-auto">
-          <Slider {...settings} className="  max-w-[840px] gap-2 ">
+        <div className="md:max-w-[860px] max-w-[420px]   lg:col-span-8 col-span-12 mx-auto">
+          <Slider {...settings} className="  max-w-[860px] gap-3 ">
             {data?.map((card) => (
-              <div className="card bg-white col-span-6 lg:col-span-4  max-w-[380px]  rounded-xl flex flex-col items-center justify-center px-10 py-14">
+              <div className="card  bg-white col-span-6 lg:col-span-4  max-w-[380px]  rounded-xl flex flex-col items-center justify-center px-10 py-14">
                 <div>
                   <img src={partner1} alt="partner1" />
                 </div>

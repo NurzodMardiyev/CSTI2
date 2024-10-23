@@ -1,5 +1,4 @@
-import React, { useRef, useState } from "react";
-import { gsap } from "gsap";
+import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -45,7 +44,7 @@ export default function News() {
       return (
         '<div class="' +
         className +
-        '" style="flex: 1; width: 25%; color:black; ">' +
+        '" style="flex: 1; width: 25%; color: white; ">' +
         newsData[index].date +
         "</div>"
       );
@@ -54,6 +53,15 @@ export default function News() {
   return (
     <div>
       <div className="container lg:max-w-9xl md:mx-auto  md:py-3 py-1.5 max-w-[90%] mx-auto items-center gap-3 my-14">
+        <div className="title flex justify-center flex-col items-center mb-4">
+          <h2 className="lg:text-[42px] text-[30px] font-[600] text-[#171717]">
+            Our News
+          </h2>
+          <p className="text-[18px] text-black font-[400] mb-2">
+            Experience the peace of mind of constant monitoring by our
+            specialized team every step of the way.
+          </p>
+        </div>
         <Swiper
           pagination={pagination}
           modules={[Pagination]}
@@ -75,11 +83,12 @@ export default function News() {
                       <Link>Подробнее</Link>
                     </div>
                   </div>
-                  <div className="col-span-6 border">
+                  <div className="col-span-6  relative">
+                    <div className="news_img z-10 absolute"></div>
                     <img
                       src={newsData[0].image}
                       alt={`News ${0 + 1}`}
-                      className="w-full"
+                      className="w-full z-0 inline-block"
                     />
                   </div>
                 </div>
@@ -91,6 +100,8 @@ export default function News() {
               <div className="news-content">
                 <div className="grid grid-cols-12 items-center">
                   <div className="col-span-6 px-6">
+                    <FaQuoteLeft className="text-[36px] text-[#fec139] mb-6" />
+
                     <h2 className="news_title text-[28px]">
                       АО «Самрук-Қазына» по итогам 2023 года нарастило выручку
                       до 15,4 трлн тенге Все права защищены. Используйте
@@ -101,7 +112,7 @@ export default function News() {
                       <Link>Подробнее</Link>
                     </div>
                   </div>
-                  <div className="col-span-6 border">
+                  <div className="col-span-6 ">
                     <img
                       src={newsData[1].image}
                       alt={`News ${0 + 1}`}
@@ -117,6 +128,8 @@ export default function News() {
               <div className="news-content">
                 <div className="grid grid-cols-12 items-center">
                   <div className="col-span-6 px-6">
+                    <FaQuoteLeft className="text-[36px] text-[#fec139] mb-6" />
+
                     <h2 className="news_title text-[28px]">
                       АО «Самрук-Қазына» по итогам 2023 года нарастило выручку
                       до 15,4 трлн тенге Все права защищены. Используйте
@@ -127,7 +140,7 @@ export default function News() {
                       <Link>Подробнее</Link>
                     </div>
                   </div>
-                  <div className="col-span-6 border">
+                  <div className="col-span-6 ">
                     <img
                       src={newsData[2].image}
                       alt={`News ${0 + 1}`}
@@ -143,6 +156,8 @@ export default function News() {
               <div className="news-content">
                 <div className="grid grid-cols-12 items-center">
                   <div className="col-span-6 px-6">
+                    <FaQuoteLeft className="text-[36px] text-[#fec139] mb-6" />
+
                     <h2 className="news_title text-[28px]">
                       АО «Самрук-Қазына» по итогам 2023 года нарастило выручку
                       до 15,4 трлн тенге Все права защищены. Используйте
@@ -153,7 +168,7 @@ export default function News() {
                       <Link>Подробнее</Link>
                     </div>
                   </div>
-                  <div className="col-span-6 border">
+                  <div className="col-span-6 ">
                     <img
                       src={newsData[2].image}
                       alt={`News ${0 + 1}`}
@@ -217,7 +232,10 @@ export default function News() {
           color: #fff; /* Matn rangi */
         }
         .swiper-pagination .swiper-pagination-bullet {
-          background: #fec139 !important;
+          background: #105372 !important;
+        }
+        .swiper-pagination-bullet-active {
+          color: #fff;
         }
         .news_title::after {
           content: "";
